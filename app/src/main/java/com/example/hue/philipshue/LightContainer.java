@@ -13,13 +13,17 @@ import java.util.Map;
 /**
  * Created by Sai Chang on 5/29/2016.
  */
-public class lightContainer implements Parcelable {
+public class LightContainer implements Parcelable {
     PHHueSDK hueSDK;
     PHBridge bridge;
     //List<PHLight> lights;
     Map<Integer, List<PHLight>> groups;
 
-    public void LightContainer(PHHueSDK sdk) {
+    public LightContainer(){
+        super();
+    }
+
+    public void setContainer(PHHueSDK sdk) {
         hueSDK = sdk;
         bridge = sdk.getSelectedBridge();
     }
@@ -40,8 +44,8 @@ public class lightContainer implements Parcelable {
             return new LightContainer(in);
         }
 
-        public MyParcelable[] newArray(int size) {
-            return new MyParcelable[size];
+        public LightContainer[] newArray(int size) {
+            return new LightContainer[size];
         }
     };
 }

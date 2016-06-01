@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
                 Bundle bun = new Bundle();
                 bun.putParcelable("container", container);
                 Intent next = new Intent(MainActivity.this, SelectActivity.class);
-                next.putExtra(bun);
+                next.putExtras(bun);
                 startActivity(next);
             }
         });
